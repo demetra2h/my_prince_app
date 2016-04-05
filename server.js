@@ -18,8 +18,8 @@ var app = express();
 app.set('title', env.TITLE);
 app.set('safe-title', env.SAFE_TITLE);
 // EJS view engine config
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'ejs');
 
 // Create local variables for use thoughout the application.
 app.locals.title = app.get('title');
@@ -43,13 +43,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(debugReq);
 
 // Defines all of our "dynamic" routes.
-app.use('/', routes);
+// app.use('/api', routes);
 
 // Catches all 404 routes.
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
-  next(err);
+  res.redirect("/404.html");
 });
 
 // Error-handling layer.
@@ -57,7 +57,7 @@ app.use(function(err, req, res, next) {
   // In development, the error handler will print stacktrace.
   err = (app.get('env') === 'development') ? err : {};
   res.status(err.status || 500);
-  res.render('error', {
+  res.json('error', {
     message: err.message,
     error: err
   });
