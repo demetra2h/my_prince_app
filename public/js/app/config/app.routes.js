@@ -25,6 +25,10 @@
         controller:   "ProfileController",
         controllerAs: "vm",
         authorized:   true
+      })
+      .state("home", {
+        url: "/home",
+        templateUrl: "/js/app/layouts/home.html"
       });
 
     $urlRouterProvider.otherwise("/");

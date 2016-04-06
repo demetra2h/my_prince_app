@@ -1,91 +1,91 @@
-var Shmee = require("../models/shows");
+var Show = require("../models/shows");
 
 // get the show!
-var shmeeShow = function(req, res, next){
+var showShow = function(req, res, next){
   var id = req.params.id;
 
-  Schmee.findById(id, function(err, schmee){
-    if err {
+  Show.findById(id, function(err, show){
+    if (err) {
       res.send(err);
     }
 // gimme it as json!
-    res.json(schmee);
+    res.json(show);
   });
 };
 
 // get the shows!
-var schmeeIndex = function(req, res) {
-  Schmee.find({}, function(err, schmees) {
+var showIndex = function(req, res) {
+  Show.find({}, function(err, shows) {
     if (err) {
       res.send(err);
     }
-// i still want schmee as json!
-    res.json(schmees);
+// i still want show as json!
+    res.json(shows);
   });
 }
 
 // create shows!
-var schmeeCreate = function(req, res) {
-  var schmee = new Schmee();
+var showCreate = function(req, res) {
+  var show = new Show();
 
-  schmee.bandName = req.body.bandName;
-  schmee.venue    = req.body.venue;
-  schmee.city     = req.body.city;
-  schmee.state    = req.body.state;
-  schmee.date     = req.body.date;
+  show.bandName = req.body.bandName;
+  show.venue    = req.body.venue;
+  show.city     = req.body.city;
+  show.state    = req.body.state;
+  show.date     = req.body.date;
 
-  schmee.save(function(err, savedSchmee)
+  show.save(function(err, savedShow)
   {
-    if err {
+    if (err) {
       res.send(err)
     }
 
   // gimme a message
-    console.log("look at that schmee!")
+    console.log("look at that show!")
 
   // i want it as json, duh!
-    res.json(savedSchmee);
+    res.json(savedShow);
   });
 };
 
 // update a show
-var schmeeUpdate = function(req, res) {
+var showUpdate = function(req, res) {
   var id = req.params.id;
 
-  Schmee.findById(id, function(err, schmee) {
+  Show.findById(id, function(err, show) {
 
     if (err) {
       res.send(err);
     }
 
 // setting the new info for the show
-    if (req.body.bandName) schmee.bandName = req.body.bandName;
-    if (req.body.venue) schmee.venue = req.body.venue;
-    if (req.body.city) schmee.city = req.body.city;
-    if (req.body.state) schmee.state = req.body.state;
-    if (req.body.date) schmee.date = req.body.date;
+    if (req.body.bandName) show.bandName = req.body.bandName;
+    if (req.body.venue)    show.venue    = req.body.venue;
+    if (req.body.city)     show.city     = req.body.city;
+    if (req.body.state)    show.state    = req.body.state;
+    if (req.body.date)     show.date     = req.body.date;
 
     // save the new info
-    schmee.save(function(err, updatedSchmee) {
+    show.save(function(err, updatedShow) {
       if (err) {
         res.send(err);
       }
 
       console.log("you changed the show!");
 
-      res.json(updatedSchmee);
+      res.json(updatedShow);
     });
   });
 }
 
 // delete the show
-var schmeeDelete = function(req, res) {
+var showDelete = function(req, res) {
 
   var id = req.params.id;
 
-  schmee.remove({"_id" : id} function(err) {
+  Show.remove({"_id" : id}, function(err) {
     if (err) {
-      res.send(err;)
+      res.send(err);
     }
 
     res.json({ message: "that show is gone!" });
@@ -94,9 +94,9 @@ var schmeeDelete = function(req, res) {
 
 // export the functions, with json
 module.exports = {
-  schmeeSchow:  schmeeSchow,
-  schmeeIndex:  schmeeIndex,
-  schmeeCreate: schmeeCreate,
-  schmeeUpdate: schmeeUpdate,
-  schmeeDelete: schmeeDelete
+  showShow:   showShow,
+  showIndex:  showIndex,
+  showCreate: showCreate,
+  showUpdate: showUpdate,
+  showDelete: showDelete
 }

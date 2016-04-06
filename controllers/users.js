@@ -3,7 +3,7 @@ var User = require("../models/user");
 module.exports = {
   create: create,
   update: update,
-  me:     me
+  me:     me,
 };
 
 function create(req, res, next) {
