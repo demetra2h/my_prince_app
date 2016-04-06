@@ -12,15 +12,15 @@
 
     // BINDINGS
     vm.signUp = {
-      email:    "pj@ga.co",
-      name:     "Philip Hughes",
-      password: "12345",
-      passwordConfirmation: "12345"
+      email:    "demetra2h@gmail.com",
+      name:     "demetra haloutsos",
+      password: "abc123",
+      passwordConfirmation: "abc123"
     };
     vm.submitSignUp = submitSignUp;
     vm.logIn = {
-      email:    "pj@ga.co",
-      password: "12345"
+      email:    "demetra2h@gmail.com",
+      password: "abc123"
     };
     vm.submitLogIn = submitLogIn;
     vm.conflict = false;
@@ -53,7 +53,7 @@
           // on success
           function(decodedToken) {
             $log.debug('Logged in!', decodedToken);
-            $state.go('profile');
+            $state.go('welcome');
           },
           // on error
           function(err) {

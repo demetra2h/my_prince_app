@@ -66,6 +66,9 @@ function create(req, res, next) {
         message: 'Successfully generated token',
         token:   token
       });
+    })
+    .catch(function(err) {
+      res.json({msg: err});
     });
 }
 

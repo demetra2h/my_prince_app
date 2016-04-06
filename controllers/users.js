@@ -33,7 +33,7 @@ function create(req, res, next) {
 
 function me(req, res, next) {
   User
-    .findOne({email: req.decoded.email}).exec()
+    .findOne({email: req.decoded.email}).populate('shows').exec()
     .then(function(user) {
       res.json({
         success: true,
