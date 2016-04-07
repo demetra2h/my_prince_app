@@ -26,9 +26,9 @@
         controllerAs: "vm",
         authorized:   true
       })
-      .state("home", {
-        url: "/home",
-        templateUrl: "/js/app/layouts/home.html"
+      .state("info", {
+        url: "/info",
+        templateUrl: "/js/app/layouts/info.html"
       })
       .state("happenings", {
         url: "/happenings",
