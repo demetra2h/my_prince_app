@@ -5,12 +5,12 @@
     .module("app")
     .controller("ShowsController", ShowsController);
 
-  ShowsController.$inject = ['ShowsService'];
+  ShowsController.$inject = ['showsService', '$log'];
 
-  function ShowsController(ShowsService) {
+  function ShowsController(showsService, $log) {
     var vm = this;
-
-    vm.shows = ShowsService;
+    vm.displayShows = showsService.show();
+    $log.info(vm.displayShows);
   }
 
 })();

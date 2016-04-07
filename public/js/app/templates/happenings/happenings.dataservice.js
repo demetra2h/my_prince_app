@@ -5,18 +5,26 @@
     .module("app")
     .factory("HappeningsService", HappeningsService);
 
-    happeningService.$inject = [];
+    HappeningsService.$inject = [];
 
     function HappeningsService() {
-      var happenings = [{
-        whatsHappening: "screening of Purple Rain!",
+       var service = {
+        happening:happening
+      };
+
+      function happening(){
+        var happenings = [{
+        happeningName:       "Purple Rain",
         venue:          "my basement",
-        city:           "burbank",
+        city:           "Burbank",
         state:          "CA",
-        date:           "June 4, 2016"
+        date:           "April 14, 2016"
       }];
 
       return happenings;
+      }
+      return service;
+
     }
 
 })();

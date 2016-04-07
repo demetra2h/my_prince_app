@@ -1,1 +1,11 @@
 <h1>this super cool Prince themed event is happening!</h1>
+
+<div ng-repeat="happening in vm.displayHappenings">
+  <div>
+    <p>{{ happening.happeningName }}</p>
+    <p>{{ happening.venue }}</p>
+    <p>{{ happening.city }}</p>
+    <p>{{ happening.state }}</p>
+    <p>{{ happening.date }}</p>
+  </div>
+</div>

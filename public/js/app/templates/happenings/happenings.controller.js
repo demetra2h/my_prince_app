@@ -5,12 +5,12 @@
     .module("app")
     .controller("HappeningsController", HappeningsController);
 
-  HappeningsController.$inject = ['HappeningsService'];
+  HappeningsController.$inject = ['HappeningsService', '$log'];
 
-  function HappeningsController(HappeningsService) {
+  function HappeningsController(HappeningsService, $log) {
     var vm = this;
-
-    vm.happenings = HappeningsService;
+    vm.displayHappenings = HappeningsService.happening();
+    $log.info(vm.displayHappenings);
   }
 
 })();

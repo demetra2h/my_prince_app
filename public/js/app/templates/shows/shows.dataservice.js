@@ -8,7 +8,15 @@
     showsService.$inject = [];
 
     function showsService() {
-      var happenings = [{
+      var service = {
+        show:show
+      };
+
+      return service;
+
+
+      function show(){
+        var shows = [{
         bandName:       "Purple Reign",
         venue:          "knitting factory",
         city:           "Hollywood",
@@ -17,6 +25,7 @@
       }];
 
       return shows;
+      }
     }
 
 })();
