@@ -14,7 +14,7 @@
 
       function happening(){
         var happenings = [{
-        happeningName:       "Purple Rain",
+        happeningName:  "Purple Rain",
         venue:          "my basement",
         city:           "Burbank",
         state:          "CA",

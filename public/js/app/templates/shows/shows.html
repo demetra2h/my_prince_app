@@ -1,12 +1,15 @@
-<h1>so many fake Prince bands paying homage</h1>
-<p>The Time doesn't count! sorry morris.</p>
-
-<div ng-repeat="show in vm.displayShows">
-  <div>
+<div class="head">
+  <strong>so many fake Prince bands paying homage</strong>
+</div>
+  <p>The Time doesn't count! sorry morris.</p>
+<div class="info" ng-repeat="show in vm.displayShows">
+  <div class="infor">
     <p>{{ show.bandName }}</p>
     <p>{{ show.venue }}</p>
     <p>{{ show.city }}</p>
     <p>{{ show.state }}</p>
     <p>{{ show.date }}</p>
   </div>
+
 </div>
+
