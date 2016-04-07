@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  background: url('images/the_little_prince.jpg') no-repeat;
+  background: url('../images/the_little_prince.jpg') no-repeat;
   background-size: cover;
   font-family: sans-serif;
   font-size: 18px;
