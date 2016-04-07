@@ -29,6 +29,14 @@
       .state("home", {
         url: "/home",
         templateUrl: "/js/app/layouts/home.html"
+      })
+      .state("happenings", {
+        url: "/happenings",
+        templateUrl: "/js/app/templates/happenings/happenings.html"
+      })
+      .state("shows", {
+        url: "/shows",
+        templateUrl: "/js/app/templates/shows/shows.html"
       });
 
     $urlRouterProvider.otherwise("/");
