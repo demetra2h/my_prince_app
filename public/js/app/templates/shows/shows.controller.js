@@ -5,27 +5,12 @@
     .module("app")
     .controller("ShowsController", ShowsController);
 
-    ShowsController.$inject = ["$log"];
+  ShowsController.$inject = ['ShowsService'];
 
-    function ShowsController($log) {
-      var vm = this;
+  function ShowsController(ShowsService) {
+    var vm = this;
 
-      vm.createShow = createShow;
-      vm.show = {
-        name: "",
-        venue: "",
-        city: "",
-        state: ""
-      };
-      vm.show = [];
-
-      function createShow() {
-        $log.info("adding:", vm.show.name);
-
-        vm.show.push(vm.show);
-      }
-
-      $log.info("ShowsController loaded");
-    }
+    vm.shows = ShowsService;
+  }
 
 })();

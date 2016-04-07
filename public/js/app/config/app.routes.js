@@ -33,10 +33,14 @@
       .state("happenings", {
         url: "/happenings",
         templateUrl: "/js/app/templates/happenings/happenings.html"
+        controller: "HappeningsController",
+        controllerAs: "vm",
       })
       .state("shows", {
         url: "/shows",
         templateUrl: "/js/app/templates/shows/shows.html"
+        controller: "ShowsController",
+        controllerAs: "vm",
       });
 
     $urlRouterProvider.otherwise("/");
