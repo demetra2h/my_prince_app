@@ -1,6 +1,7 @@
-<h1>{{ vm.authService.currentUser().name }}'s Profile</h1>
-
-<h3>Update your user info</h3>
+<div class="head">
+  <h1><strong>{{ vm.authService.currentUser().name }}'s Profile</strong></h1>
+</div>
+<h3>Update your login info</h3>
 
 <form ng-submit="vm.submitUpdate();">
   <div class="form-group">
