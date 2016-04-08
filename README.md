@@ -1,6 +1,6 @@
 #My Prince
 
-url('../images/screen.png')
+<a href="url('../images/screen.png')"></a>
 
 A place to celebrate the musical genius that is Prince Rogers Nelson, through Prince related events.
 
@@ -26,9 +26,6 @@ Getting started and knowing what to give priority.
 
 ##Next Steps
 Adding more information about his amazing career and projects. Implementing a way for users to add photos and other media to the site.
-
-##Table of Routes
-
 
 ##Further Reading
 - <a href="http://mean.io/#!/">MEAN</a>
