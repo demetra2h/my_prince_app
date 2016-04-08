@@ -1,6 +1,6 @@
 #My Prince
 
-<a href="url('../images/screen.png')"></a>
+![img](http://imgur.com/a/XT2iJ)
 
 A place to celebrate the musical genius that is Prince Rogers Nelson, through Prince related events.
 
@@ -23,6 +23,9 @@ The aim of this app is to keep Prince related events in one place, easily access
 
 ##Problems
 Getting started and knowing what to give priority.
+Finding available media.
+![img](http://imgur.com/4qkXQNt)
+
 
 ##Next Steps
 Adding more information about his amazing career and projects. Implementing a way for users to add photos and other media to the site.
