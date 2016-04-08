@@ -16,7 +16,7 @@
 
  vm.getShows = function() {
       showsService.getShows().then(function(shows) {
-        shows.forEach(hap => {
+        shows.forEach(show => {
           showsService.shows.push(show);
         })
       }, function(err) {

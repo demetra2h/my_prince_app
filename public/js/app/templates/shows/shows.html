@@ -15,8 +15,8 @@
 
 <form ng-submit="vm.submitShow(vm.newShow)">
  <div id="new-show" class="form-group">
-    <label for="show">show</label>
-    <input ng-model="vm.newShow.bandName" type="show" class="form-control" id="show" placeholder="show">
+    <label ng-model="vm.newShow.name" for="show">show</label>
+    <input type="show" class="form-control" id="show" ng-model="vm.newShow.bandName" placeholder="show">
   </div>
 
    <div class="form-group">
