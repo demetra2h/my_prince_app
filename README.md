@@ -1,6 +1,6 @@
 #My Prince
 
-- image of app
+url('../images/screen.png')
 
 A place to celebrate the musical genius that is Prince Rogers Nelson, through Prince related events.
 
