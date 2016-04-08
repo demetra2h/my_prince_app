@@ -9,8 +9,32 @@
 
   function ShowsController(showsService, $log) {
     var vm = this;
-    vm.displayShows = showsService.show();
-    $log.info(vm.displayShows);
+
+    vm.newShow = {};
+
+    vm.displayShows = showsService.shows;
+
+ vm.getShows = function() {
+      showsService.getShows().then(function(shows) {
+        shows.forEach(hap => {
+          showsService.shows.push(show);
+        })
+      }, function(err) {
+        $log.info(err);
+      })
+    }
+
+    vm.submitShow = function() {
+      showsService.createShow(vm.newShow)
+        .then(function(newShow){
+          showsService.shows.push(newShow);
+          vm.newShow = {};
+        }, function(err) {
+          $log.info(err)
+        });
+    }
+
+    vm.getShows();
   }
 
 })();

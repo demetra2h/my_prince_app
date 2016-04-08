@@ -5,27 +5,35 @@
     .module("app")
     .factory("showsService", showsService);
 
-    showsService.$inject = [];
+    showsService.$inject = ['$http', '$log'];
 
-    function showsService() {
+     function showsService($http, $log) {
       var service = {
-        show:show
+        shows: [],
+        createShow: createShow,
+        getShows:   getShows
+      };
+
+      function createShow(show) {
+        return $http.post('/api/shows', show)
+         .then(function(res) {
+          return res.data;
+         }, function(err) {
+          $log.info(err);
+         })
+      }
+
+      function getShows() {
+       return $http.get('api/shows')
+         .then(function(res) {
+           return res.data;
+         }, function(err) {
+          $log.info(err);
+         });
       };
 
       return service;
 
-
-      function show(){
-        var shows = [{
-        bandName:       "Purple Reign",
-        venue:          "knitting factory",
-        city:           "Hollywood",
-        state:          "CA",
-        date:           "May 4, 2016"
-      }];
-
-      return shows;
-      }
     }
 
 })();

@@ -27,7 +27,7 @@ router.delete('/shows/:id', token.authenticate, ShowsCtrl.showDelete);
 // happenings resource paths
 router.get('/happenings/:id',    HappeningsCtrl.happeningShow);
 router.get('/happenings',        HappeningsCtrl.happeningIndex);
-router.post('/happenings',       token.authenticate, HappeningsCtrl.happeningCreate);
+router.post('/happenings',       HappeningsCtrl.happeningCreate);
 router.put('/happenings/:id',    token.authenticate, HappeningsCtrl.happeningUpdate);
 router.delete('/happenings/:id', token.authenticate, HappeningsCtrl.happeningDelete);
 

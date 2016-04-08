@@ -22,10 +22,13 @@ The aim of this app is to keep Prince related events in one place, easily access
 - run `npm install` in your terminal.
 
 ##Problems
+Getting started and knowing what to give priority.
 
 ##Next Steps
+Adding more information about his amazing career and projects. Implementing a way for users to add photos and other media to the site.
 
 ##Table of Routes
+
 
 ##Further Reading
 - <a href="http://mean.io/#!/">MEAN</a>

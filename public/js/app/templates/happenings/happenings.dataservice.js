@@ -5,24 +5,33 @@
     .module("app")
     .factory("HappeningsService", HappeningsService);
 
-    HappeningsService.$inject = [];
+    HappeningsService.$inject = ['$http', '$log'];
 
-    function HappeningsService() {
-       var service = {
-        happening:happening
+    function HappeningsService($http, $log) {
+      var service = {
+        happenings: [],
+        createHappening: createHappening,
+        getHappenings:   getHappenings
       };
 
-      function happening(){
-        var happenings = [{
-        happeningName:  "Purple Rain",
-        venue:          "my basement",
-        city:           "Burbank",
-        state:          "CA",
-        date:           "April 14, 2016"
-      }];
-
-      return happenings;
+      function createHappening(happening) {
+        return $http.post('/api/happenings', happening)
+         .then(function(res) {
+          return res.data;
+         }, function(err) {
+          $log.info(err);
+         })
       }
+
+      function getHappenings() {
+       return $http.get('api/happenings')
+         .then(function(res) {
+           return res.data;
+         }, function(err) {
+          $log.info(err);
+         });
+      };
+
       return service;
 
     }

@@ -1,7 +1,7 @@
 <div class="head">
   <strong>this super cool Prince themed event is happening!</strong></h1>
 </div>
-<div class="info" ng-repeat="happening in vm.displayHappenings">
+<div class="info" ng-repeat="happening in vm.displayHappenings track by $index">
   <div>
     <p>{{ happening.happeningName }}</p>
     <p>{{ happening.venue }}</p>
@@ -11,31 +11,32 @@
   </div>
 </div>
 
-<form>
- <div class="form-group">
-    <label for="happening">happening</label>
-    <input type="happening" class="form-control" id="happening" placeholder="happening">
+
+<form ng-submit="vm.submitHappening(vm.newHappening)">
+ <div id="new-happening" class="form-group">
+    <label ng-model="vm.newHappening.name" for="happening">happening</label>
+    <input type="happening" class="form-control" id="happening" ng-model="vm.newHappening.whatsHappening" placeholder="happening">
   </div>
 
   <div class="form-group">
     <label for="venue">venue</label>
-    <input type="venue" class="form-control" id="venue" placeholder="venue">
+    <input type="venue" class="form-control" id="venue" ng-model="vm.newHappening.venue" placeholder="venue">
   </div>
 
   <div class="form-group">
     <label for="city">city</label>
-    <input type="city" class="form-control" id="city" placeholder="city">
+    <input type="city" class="form-control" id="city" ng-model="vm.newHappening.city" placeholder="city">
   </div>
 
   <div class="form-group">
     <label for="state">state</label>
-    <input type="state" class="form-control" id="state" placeholder="state">
+    <input type="state" class="form-control" id="state" ng-model="vm.newHappening.state" placeholder="state">
   </div>
 
   <div class="form-group">
     <label for="date">date</label>
-    <input type="date" class="form-control" id="date" placeholder="date">
+    <input type="date" class="form-control" id="date" ng-model="vm.newHappening.date" placeholder="date">
   </div>
 
-    <button type="submit" class="btn btn-default">Add</button>
+  <button type="submit" class="btn btn-default">add</button>
 </form>

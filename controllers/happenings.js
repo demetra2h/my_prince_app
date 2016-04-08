@@ -28,11 +28,11 @@ var happeningIndex = function(req, res) {
 var happeningCreate = function(req, res) {
   var happening = new Happening();
 
-  happening.bandName = req.body.bandName;
-  happening.venue    = req.body.venue;
-  happening.city     = req.body.city;
-  happening.state    = req.body.state;
-  happening.date     = req.body.date;
+  happening.whatsHappening = req.body.whatsHappening;
+  happening.venue          = req.body.venue;
+  happening.city           = req.body.city;
+  happening.state          = req.body.state;
+  happening.date           = req.body.date;
 
   happening.save(function(err, savedHappening)
   {

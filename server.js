@@ -47,7 +47,9 @@ app.use(bodyParser.json());
 app.use(debugReq);
 
 // Validate content-type.
-app.use(validateContentType);
+// app.use(validateContentType);
+
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // Our routes.
 app.use('/api', routes);
@@ -88,19 +90,19 @@ function debugReq(req, res, next) {
   next();
 }
 
-function validateContentType(req, res, next) {
-  var methods = ['PUT', 'PATCH', 'POST'];
-  if (                                    // If the request is
-    methods.indexOf(req.method) !== -1 && // one of PUT, PATCH or POST, and
-    Object.keys(req.body).length !== 0 && // has a body that is not empty, and
-    !req.is('json')                       // does not have an application/json
-  ) {                                     // Content-Type header, then …
-    var message = 'Content-Type header must be application/json.';
-    res.status(400).json(message);
-  } else {
-    next();
-  }
-}
+// function validateContentType(req, res, next) {
+//   var methods = ['PUT', 'PATCH', 'POST'];
+//   if (                                    // If the request is
+//     methods.indexOf(req.method) !== -1 && // one of PUT, PATCH or POST, and
+//     Object.keys(req.body).length !== 0 && // has a body that is not empty, and
+//     !req.is('json')                       // does not have an application/json
+//   ) {                                     // Content-Type header, then …
+//     var message = 'Content-Type header must be application/json.';
+//     res.status(400).json(message);
+//   } else {
+//     next();
+//   }
+// }
 
 function allowCors(req, res, next) {
   res.header('Access-Control-Allow-Origin',  '*');

@@ -2,7 +2,7 @@
   <strong>so many fake Prince bands paying homage</strong>
 </div>
   <p>The Time doesn't count! Sorry Morris.</p>
-<div class="info" ng-repeat="show in vm.displayShows">
+<div class="info" ng-repeat="show in vm.displayShows track by $index">
   <div class="infor">
     <p>{{ show.bandName }}</p>
     <p>{{ show.venue }}</p>
@@ -12,32 +12,32 @@
   </div>
 </div>
 
-<form>
- <div class="form-group">
+
+<form ng-submit="vm.submitShow(vm.newShow)">
+ <div id="new-show" class="form-group">
     <label for="show">show</label>
-    <input type="show" class="form-control" id="show" placeholder="show">
+    <input ng-model="vm.newShow.bandName" type="show" class="form-control" id="show" placeholder="show">
   </div>
 
-  <div class="form-group">
+   <div class="form-group">
     <label for="venue">venue</label>
-    <input type="venue" class="form-control" id="venue" placeholder="Venue">
+    <input type="venue" class="form-control" id="venue" ng-model="vm.newShow.venue" placeholder="venue">
   </div>
 
   <div class="form-group">
     <label for="city">city</label>
-    <input type="city" class="form-control" id="city" placeholder="city">
+    <input type="city" class="form-control" id="city" ng-model="vm.newShow.city" placeholder="city">
   </div>
 
   <div class="form-group">
     <label for="state">state</label>
-    <input type="state" class="form-control" id="state" placeholder="state">
+    <input type="state" class="form-control" id="state" ng-model="vm.newShow.state" placeholder="state">
   </div>
 
   <div class="form-group">
     <label for="date">date</label>
-    <input type="date" class="form-control" id="date" placeholder="date">
+    <input type="date" class="form-control" id="date" ng-model="vm.newShow.date" placeholder="date">
   </div>
 
-    <button type="submit" class="btn btn-default">Add</button>
+  <button type="submit" class="btn btn-default">add</button>
 </form>
-

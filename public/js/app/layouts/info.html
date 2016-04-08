@@ -1,21 +1,25 @@
 <div class="head">
-  <h1>this is your info page for all things sexy</h1>
+  <strong>this is your info page for all things sexy</strong>
 </div>
 
-<div class="info" ng-repeat="show in vm.displayShows">
-    <p>Show info: </p>
-    <p>{{ show.bandName }}</p>
-    <p>{{ show.venue }}</p>
-    <p>{{ show.city }}</p>
-    <p>{{ show.state }}</p>
-    <p>{{ show.date }}</p>
+<div ng-controller="ShowsController">
+  <div class="info" ng-repeat="show in vm.displayShows">
+      <p>Show info: </p>
+      <p>{{ show.bandName }}</p>
+      <p>{{ show.venue }}</p>
+      <p>{{ show.city }}</p>
+      <p>{{ show.state }}</p>
+      <p>{{ show.date }}</p>
   </div>
+</div>
 
-<div class="info" ng-repeat="happening in vm.displayHappenings">
-  <p>Happening info: </p>
-  <p>{{ happening.happeningName }}</p>
-  <p>{{ happening.venue }}</p>
-  <p>{{ happening.city }}</p>
-  <p>{{ happening.state }}</p>
-  <p>{{ happening.date }}</p>
+<div ng-controller="HappeningsController">
+  <div class="info" ng-repeat="happening in vm.displayHappenings">
+    <p>Happening info: </p>
+    <p>{{ happening.happeningName }}</p>
+    <p>{{ happening.venue }}</p>
+    <p>{{ happening.city }}</p>
+    <p>{{ happening.state }}</p>
+    <p>{{ happening.date }}</p>
+  </div>
 </div>
