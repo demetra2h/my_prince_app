@@ -34,6 +34,8 @@
         });
     }
 
+  // delete shows
+
     vm.getShows();
   }
 

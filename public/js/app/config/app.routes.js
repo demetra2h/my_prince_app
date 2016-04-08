@@ -28,7 +28,9 @@
       })
       .state("info", {
         url: "/info",
-        templateUrl: "/js/app/layouts/info.html"
+        templateUrl: "/js/app/layouts/info.html",
+        controller: "InfoController",
+        controllerAs: "vm"
       })
       .state("happenings", {
         url: "/happenings",

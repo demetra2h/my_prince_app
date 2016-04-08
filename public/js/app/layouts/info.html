@@ -2,8 +2,8 @@
   <strong>this is your info page for all things sexy</strong>
 </div>
 
-<div ng-controller="ShowsController">
-  <div class="info" ng-repeat="show in vm.displayShows">
+<div>
+  <div class="info" ng-repeat="show in vm.shows">
       <p>Show info: </p>
       <p>{{ show.bandName }}</p>
       <p>{{ show.venue }}</p>
@@ -13,8 +13,8 @@
   </div>
 </div>
 
-<div ng-controller="HappeningsController">
-  <div class="info" ng-repeat="happening in vm.displayHappenings">
+<div>
+  <div class="info" ng-repeat="happening in vm.happenings">
     <p>Happening info: </p>
     <p>{{ happening.happeningName }}</p>
     <p>{{ happening.venue }}</p>

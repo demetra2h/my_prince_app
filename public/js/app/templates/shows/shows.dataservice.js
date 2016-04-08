@@ -11,6 +11,7 @@
       var service = {
         shows: [],
         createShow: createShow,
+        deleteShow: deleteShow,
         getShows:   getShows
       };
 
@@ -31,6 +32,15 @@
           $log.info(err);
          });
       };
+// deleting
+       function deleteShow(show) {
+        return $http.post('/api/shows' + id)
+         .then(function(res) {
+          return res.data;
+         }, function(err) {
+          $log.info(err);
+         })
+      }
 
       return service;
 

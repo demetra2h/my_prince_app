@@ -5,9 +5,9 @@
     .module("app")
     .controller("HappeningsController", HappeningsController);
 
-  HappeningsController.$inject = ['HappeningsService', '$log'];
+  HappeningsController.$inject = ['HappeningsService', '$log', '$state'];
 
-  function HappeningsController(HappeningsService, $log) {
+  function HappeningsController(HappeningsService, $log, $state) {
     var vm = this;
 
     vm.newHappening = {};
@@ -29,6 +29,7 @@
         .then(function(newHap){
           HappeningsService.happenings.push(newHap);
           vm.newHappening = {};
+          $state.go("info");
         }, function(err) {
           $log.info(err)
         });
