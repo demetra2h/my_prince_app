@@ -35,6 +35,17 @@
     }
 
   // delete shows
+  vm.deleteShow = function(id) {
+   vm.displayShows = vm.displayShows.filter(function(r) {
+        return r._id !== id;
+      });
+    showsService.deleteShow(id)
+      .then(function(data) {
+        $log.info(data)
+      }, function(err) {
+        $log.info(err)
+      });
+  }
 
     vm.getShows();
   }

@@ -11,7 +11,8 @@
       var service = {
         happenings: [],
         createHappening: createHappening,
-        getHappenings:   getHappenings
+        getHappenings:   getHappenings,
+        deleteHappening: deleteHappening
       };
 
       function createHappening(happening) {
@@ -31,6 +32,16 @@
           $log.info(err);
          });
       };
+ // delete happening
+      function deleteHappening(id) {
+        return $http.delete('/api/happenings/' + id)
+         .then(function(res) {
+          return res.data;
+          // happenings.splice(index, 1);
+         }, function(err) {
+          $log.info(err);
+         })
+      }
 
       return service;
 

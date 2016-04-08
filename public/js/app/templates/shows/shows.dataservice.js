@@ -33,8 +33,8 @@
          });
       };
 // deleting
-       function deleteShow(show) {
-        return $http.post('/api/shows' + id)
+       function deleteShow(id) {
+        return $http.delete('/api/shows/' + id)
          .then(function(res) {
           return res.data;
          }, function(err) {

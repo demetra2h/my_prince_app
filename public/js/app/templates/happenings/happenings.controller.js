@@ -34,6 +34,19 @@
           $log.info(err)
         });
     }
+  // delete happening
+ // delete shows
+  vm.deleteHappening = function(id) {
+   vm.displayHappenings = vm.displayHappenings.filter(function(r) {
+        return r._id !== id;
+      });
+    HappeningsService.deleteHappening(id)
+      .then(function(data) {
+        $log.info(data)
+      }, function(err) {
+        $log.info(err)
+      });
+  }
 
     vm.getHappenings();
   }
