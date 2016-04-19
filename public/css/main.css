@@ -44,10 +44,6 @@ a {
   cursor: pointer;
 }
 
-#button {
-  color: purple;
-  background-color: #FBEFFB;
-}
 .wrapper {
   min-height: 100%;
   height: auto !important;
